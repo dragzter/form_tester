@@ -1,6 +1,10 @@
 <?php
 
-function do_contact_section() { ?>
+function do_contact_section() { 
+
+include(get_template_directory_uri() . '/thank_you.php');
+ 
+?>
 
     <section id="contact">
       <div class="container">
@@ -23,7 +27,39 @@ function do_contact_section() { ?>
             </p>
           </div>
         </div>
-      </div>
+
+        <div class="row">
+        
+            <div class="col-md-8 mx-auto">
+            <form class="form" id="theForm" method="POST" action="<?php echo htmlspecialchars(get_template_directory_uri() . '/thank_you.php'); ?>">
+                
+                <div class="form-group">
+                  <input name="name" class="form-control required" type="text" placeholder="Full Name"/>
+                </div>
+                
+                <div class="form-group">
+                  <input name="email" class="form-control required" type="text" placeholder="Valid E-Mail" required/>    
+                </div>
+
+                <div class="form-group">
+                  <input name="website" class="form-control required" rows="4" placeholder="Website"/>
+                </div>
+
+                <div class="form-group">
+                  <textarea name="message" class="form-control required" rows="4" placeholder="Message"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-12 mx-auto text-center">
+                    <button name="submit" type="submit" class="btn btn-primary btn-xl" >Submit</button>
+                  </div>
+                </div>
+
+                <div class="col-md-12 success invisible">Thank You!</div>
+               
+              </form>
+            </div>
+        </div> 
     </section>
 
 <?php }

@@ -137,6 +137,8 @@ function form_tester_scripts() {
 	wp_enqueue_script( 'form_tester-jquery-easing', get_template_directory_uri() . '/vendor/jquery-easing/jquery.easing.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'form_tester-scroll-reveal', get_template_directory_uri() . '/vendor/scrollreveal/scrollreveal.min.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'form_tester-popup', get_template_directory_uri() . '/vendor/magnific-popup/jquery.magnific-popup.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'form_tester-validator-js', get_template_directory_uri() . '/js/validator.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'form_tester-main-js', get_template_directory_uri() . '/js/validate-form.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'form_tester-main-js', get_template_directory_uri() . '/js/creative.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -163,10 +165,13 @@ require get_template_directory() . '/sections/contact.php';
  */
 require get_template_directory() . '/inc/custom-header.php';
 
+
+
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
 
 /**
  * Functions which enhance the theme by hooking into WordPress.

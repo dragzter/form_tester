@@ -35,3 +35,30 @@ html {
 	height: auto !important;
 	width: 100%;
 }
+
+/*
+	Form
+*/
+.form input, .form textarea {
+   
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+	width: 100%;
+	border-radius: 0;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.alert-danger {
+	background-color:#ff5968 !important;
+	color: white !important;
+}
+.alert {
+	padding: 3px 10px !important;
+	margin-bottom: 7px !important;
+	border-radius: 0 !important;
+	border: none !important;
+}
