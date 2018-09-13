@@ -20,5 +20,6 @@ do_services_section();
 do_portfolio_section();
 do_cta_2_section();
 do_contact_section();
+email_list_section();
 
 get_footer();

@@ -2,7 +2,8 @@
 
 function do_contact_section() { 
 
-include(get_template_directory_uri() . '/thank_you.php');
+include(get_template_directory_uri() . '/sections/form-handlers/thank_you.php');
+include(get_template_directory_uri() . '/sections/form-handlers/email_signup.php');
  
 ?>
 
@@ -31,35 +32,81 @@ include(get_template_directory_uri() . '/thank_you.php');
         <div class="row">
         
             <div class="col-md-8 mx-auto">
-            <form class="form" id="theForm" method="POST" action="<?php echo htmlspecialchars(get_template_directory_uri() . '/thank_you.php'); ?>">
+            <form autocomplete="on" class="form mb-5" id="theForm" method="POST" action="<?php echo htmlspecialchars(get_template_directory_uri() . '/sections/form-handlers/thank_you.php'); ?>">
                 
-                <div class="form-group">
-                  <input name="name" class="form-control required" type="text" placeholder="Full Name"/>
+                <div class="form-group disappearing">
+                  <input id="name" name="name" class="form-control required" type="text" placeholder="Full Name"/>
+                  <p id="name-alert"></p>
                 </div>
                 
-                <div class="form-group">
-                  <input name="email" class="form-control required" type="text" placeholder="Valid E-Mail" required/>    
+                <div class="form-group disappearing">
+                  <input id="email" name="email" class="form-control required" type="text" placeholder="Valid E-Mail"/>    
+                  <p id="email-alert"></p>
                 </div>
 
-                <div class="form-group">
-                  <input name="website" class="form-control required" rows="4" placeholder="Website"/>
+                <div class="form-group disappearing">
+                  <input id="website" name="website" class="form-control required" rows="4" placeholder="Website"/>
+                  <p id="website-alert"></p>
                 </div>
 
-                <div class="form-group">
-                  <textarea name="message" class="form-control required" rows="4" placeholder="Message"></textarea>
+                <div class="form-group disappearing">
+                  <textarea id="message" name="message" class="form-control required" rows="4" placeholder="Message"></textarea>
+                  <p id="message-alert"></p>
                 </div>
 
                 <div class="form-group">
                   <div class="col-12 mx-auto text-center">
-                    <button name="submit" type="submit" class="btn btn-primary btn-xl" >Submit</button>
+                  <div id="success" class="mb-3"></div>
+                    <button id="submit" name="submit" type="submit" class="btn btn-primary btn-xl" >Submit</button>
                   </div>
                 </div>
 
-                <div class="col-md-12 success invisible">Thank You!</div>
+               
                
               </form>
             </div>
         </div> 
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Sign Up!</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+
+        <div class="row">
+        
+            <div class="col-md-8 mx-auto">
+            <form autocomplete="on" class="form" id="theDbForm" method="POST" action="<?php echo htmlspecialchars(get_template_directory_uri() . '/sections/form-handlers/email_signup.php'); ?>">
+                
+                <div class="form-group">
+                  <input id="DBfirstname" name="firstname" class="form-control required" type="text" placeholder="First Name"/>
+                </div>
+                
+                <div class="form-group">
+                  <input id="DBlastname" name="lastname" class="form-control required" type="text" placeholder="Last Name"/>    
+                </div>
+
+                <div class="form-group">
+                  <input id="DBphone" name="phone" class="form-control required" rows="4" placeholder="Phone"/>
+                </div>
+
+              
+                <div class="form-group">
+                  <input id="DBemail" name="email" class="form-control required" type="text" placeholder="Valid E-Mail"/>    
+                </div>
+
+                <div class="form-group">
+                  <div class="col-12 mx-auto text-center">
+                  <div id="success" class="mb-3"></div>
+                    <button id="DBsubmit" name="dbsubmit" type="submit" class="btn btn-primary btn-xl">Sign up</button>
+                  </div>
+                </div>
+  
+               
+              </form>
+            </div>
+        </div>
     </section>
 
 <?php }
