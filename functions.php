@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'form_tester_widgets_init' );
 function form_tester_scripts() {
 	wp_deregister_script( 'jquery' );
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/vendor/jquery/jquery.min.js', array(), '20151215', false );
-	
+
 	wp_enqueue_style( 'form_tester-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'form_tester-magnific-popup', get_template_directory_uri()  . '/vendor/magnific-popup/magnific-popup.css' );
 	wp_enqueue_style( 'form_tester-bootstrap', get_template_directory_uri()  . '/vendor/bootstrap/css/bootstrap.min.css' );
@@ -138,7 +138,7 @@ function form_tester_scripts() {
 	wp_enqueue_script( 'form_tester-scroll-reveal', get_template_directory_uri() . '/vendor/scrollreveal/scrollreveal.min.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'form_tester-popup', get_template_directory_uri() . '/vendor/magnific-popup/jquery.magnific-popup.min.js', array('jquery'), '20151215', true );
 	//wp_enqueue_script( 'form_tester-validator-js', get_template_directory_uri() . '/js/validator.js', array('jquery'), '20151215', true );
-	wp_enqueue_script( 'form_tester-validate-form-js', get_template_directory_uri() . '/js/validate-form.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'form_tester-validate-form-js', get_template_directory_uri() . '/js/validate-form.js', array(), '20151215', true );
 	wp_enqueue_script( 'form_tester-main-js', get_template_directory_uri() . '/js/creative.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

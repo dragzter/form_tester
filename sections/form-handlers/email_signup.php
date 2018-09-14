@@ -3,6 +3,9 @@
 $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
 require_once( $parse_uri[0] . 'wp-load.php' );
 
+function die_and_dump() {
+
+}
 
 $fname = test_the_input($_POST['firstname']);
 $lname = test_the_input($_POST['lastname']);
@@ -18,7 +21,7 @@ function test_the_input($data) {
 
 $err = "";
 
-if (isset($_POST['dbsubmit'])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     global $wpdb;
 
@@ -35,10 +38,7 @@ if (isset($_POST['dbsubmit'])) {
 }
 
 if ($result) {
-
     $output = 'Insertion successful';
-    
-    
 } else {
     $err = 'Insertion failed';
 }
@@ -54,5 +54,3 @@ $datas = [
 
 ];
 echo json_encode($datas);
-echo $output;
-

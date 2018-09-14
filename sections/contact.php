@@ -1,10 +1,10 @@
 <?php
 
-function do_contact_section() { 
+function do_contact_section() {
 
-include(get_template_directory_uri() . '/sections/form-handlers/thank_you.php');
-include(get_template_directory_uri() . '/sections/form-handlers/email_signup.php');
- 
+//include(get_template_directory_uri() . '/sections/form-handlers/thank_you.php');
+//include(get_template_directory_uri() . '/sections/form-handlers/email_signup.php');
+
 ?>
 
     <section id="contact">
@@ -30,17 +30,17 @@ include(get_template_directory_uri() . '/sections/form-handlers/email_signup.php
         </div>
 
         <div class="row">
-        
+
             <div class="col-md-8 mx-auto">
             <form autocomplete="on" class="form mb-5" id="theForm" method="POST" action="<?php echo htmlspecialchars(get_template_directory_uri() . '/sections/form-handlers/thank_you.php'); ?>">
-                
+
                 <div class="form-group disappearing">
                   <input id="name" name="name" class="form-control required" type="text" placeholder="Full Name"/>
                   <p id="name-alert"></p>
                 </div>
-                
+
                 <div class="form-group disappearing">
-                  <input id="email" name="email" class="form-control required" type="text" placeholder="Valid E-Mail"/>    
+                  <input id="email" name="email" class="form-control required" type="text" placeholder="Valid E-Mail"/>
                   <p id="email-alert"></p>
                 </div>
 
@@ -61,11 +61,11 @@ include(get_template_directory_uri() . '/sections/form-handlers/email_signup.php
                   </div>
                 </div>
 
-               
-               
+
+
               </form>
             </div>
-        </div> 
+        </div>
 
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
@@ -75,35 +75,35 @@ include(get_template_directory_uri() . '/sections/form-handlers/email_signup.php
         </div>
 
         <div class="row">
-        
+
             <div class="col-md-8 mx-auto">
             <form autocomplete="on" class="form" id="theDbForm" method="POST" action="<?php echo htmlspecialchars(get_template_directory_uri() . '/sections/form-handlers/email_signup.php'); ?>">
-                
-                <div class="form-group">
+
+                <div class="form-group disappearing">
                   <input id="DBfirstname" name="firstname" class="form-control required" type="text" placeholder="First Name"/>
                 </div>
-                
-                <div class="form-group">
-                  <input id="DBlastname" name="lastname" class="form-control required" type="text" placeholder="Last Name"/>    
+
+                <div class="form-group disappearing">
+                  <input id="DBlastname" name="lastname" class="form-control required" type="text" placeholder="Last Name"/>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group disappearing">
                   <input id="DBphone" name="phone" class="form-control required" rows="4" placeholder="Phone"/>
                 </div>
 
-              
-                <div class="form-group">
-                  <input id="DBemail" name="email" class="form-control required" type="text" placeholder="Valid E-Mail"/>    
+
+                <div class="form-group disappearing">
+                  <input id="DBemail" name="email" class="form-control required" type="text" placeholder="Valid E-Mail"/>
+                  <input id="hiddenOne" type="hidden" name="my_fancy_form" value="1" />
                 </div>
 
                 <div class="form-group">
                   <div class="col-12 mx-auto text-center">
-                  <div id="success" class="mb-3"></div>
                     <button id="DBsubmit" name="dbsubmit" type="submit" class="btn btn-primary btn-xl">Sign up</button>
                   </div>
                 </div>
-  
-               
+
+
               </form>
             </div>
         </div>
