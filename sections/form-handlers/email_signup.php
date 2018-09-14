@@ -3,8 +3,8 @@
 $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
 require_once( $parse_uri[0] . 'wp-load.php' );
 
-function die_and_dump() {
-
+function die_and_dump($data) {
+    wp_die(var_dump($data));
 }
 
 $fname = test_the_input($_POST['firstname']);
